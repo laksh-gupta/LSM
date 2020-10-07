@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crop Recommendation</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<header>
+		<div class="hero">
+		<h2 id="one">Crop Recommendation</h2>
+		<p id="para">Enter the Details</p>
+
+		</div>
+	</header>
+	<div class="ml-container">
+		<p id="para2">Enter the State:</p>
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<textarea id="ta_1" name="message1" rows="1" cols="100"></textarea>
+		<br/>
+		<p id="para2">Enter the cost per hectare:</p>
+		<form action="{{ url_for('predict')}}" method="POST">
+		<textarea id="ta_2" name="message2" rows="1" cols="100"></textarea>
+		<br/>
+		<p id="para2">Enter the cost per quintal:</p>
+		<form action="{{ url_for('predict')}}" method="POST">
+		<textarea id="ta_3" name="message3" rows="1" cols="100"></textarea>
+		<br/>
+	<p>
+
+	</p>
+	</div>
+		<div class="container">
+		<input  type="submit" class="btn-info" value="Predict">
+	</div>
+
+	</form>
+
+	<div class="results">
+		<h3 id=res >Result :{{prediction}}</h3>
+	</div>
+
+</body>
+</html>
