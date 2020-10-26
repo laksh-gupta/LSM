@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve myproject
+After=network.target
+
+[Service]
+User=sudonims
+Group=www-data
+WorkingDirectory=/home/sudonims/Documents/lsm
+Environment="PATH=/home/sudonims/Documents/lsm/agroflo/bin"
+ExecStart=/home/sudonims/Documents/lsm/agroflo/bin/uwsgi --ini app.ini
+
+[Install]
+WantedBy=multi-user.target
