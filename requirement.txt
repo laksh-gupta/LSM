@@ -24,6 +24,7 @@ scipy==1.5.3
 six==1.15.0
 sklearn==0.0
 threadpoolctl==2.1.0
+toml==0.10.1
 vine==5.0.0
 Werkzeug==1.0.1
 wrapt==1.12.1
