@@ -38,7 +38,7 @@ def main():
 # For displaying predicted value
 
 
-@app.route('/getapp')
+@app.route('/agroflo')
 def getapp():
     return send_file("agroflo.apk", attachment_filename="agroflo.apk")
     # return Response(stream_with_context(utility.get_chunks("agroflo.apk")), headers={'Content-Disposition': f'attachment; filename={name}'})
