@@ -1,8 +1,9 @@
 server {
-  listen  80;
-  server_name localhost;
-
-  location / {
-    
-  }
+	listen 80;
+	server_name 54.169.249.141 
+		    agroflo.technology;
+	location / {
+		include uwsgi_params;
+		uwsgi_pass unix:/home/ubuntu/agroflo/app.sock;
+	}
 }
