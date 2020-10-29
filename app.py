@@ -1,6 +1,7 @@
 # importing the necessary libraries
-from flask import Flask, render_template, url_for, request, jsonify
+from flask import Flask, render_template, url_for, request, jsonify, Response, stream_with_context, send_file
 from flask_restful import reqparse, abort, Api, Resource
+# from utility import utility
 import urllib.request
 import json
 import os
@@ -35,6 +36,12 @@ def main():
     return render_template('index.html')
 
 # For displaying predicted value
+
+
+@app.route('/getapp')
+def getapp():
+    return send_file("agroflo.apk", attachment_filename="agroflo.apk")
+    # return Response(stream_with_context(utility.get_chunks("agroflo.apk")), headers={'Content-Disposition': f'attachment; filename={name}'})
 
 
 @app.route('/predict', methods=['GET', 'POST'])
